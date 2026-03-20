@@ -146,8 +146,29 @@ as.Date("03-20-2026")
 as.Date("03-20-2026", format="%m-%d-%Y")
 as.Date("032026", "%m%d%y")
 
+# 문제) 다음 데이터를 날짜형으로 변환하여라
+# "2026년 3월 20일"
 
+as.Date("2026년 3월 20일", "%Y년 %m월 %d일")
 
+as.Date(100,"2026-03-20")
+as.Date(-100,"2026-03-20")
+as.Date("2026-03-20")+100
+
+# 6-2. lubridate 패키지 사용
+install.packages("lubridate")
+library(lubridate)
+
+d = now()
+year(d)
+month(d)
+day(d)
+wday(d, label = T)
+
+d - days(2)
+d + days(2)
+
+d + years(2)
 
 
 
