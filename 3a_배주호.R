@@ -170,25 +170,58 @@ d + days(2)
 
 d + years(2)
 
+# 문제) 현재 날짜와 시간에 1년 2개월 3일 4시간 5분 6초를 더해라
+now()+years(1)+month(2)+days(3)+hours(4)+minutes(5)+seconds(6)
 
 
+# seq() 
+seq(as.Date("2026-01-01"), as.Date("2026-12-31"), 1)
+seq(as.Date("2026-01-01"), as.Date("2026-12-31"), 'day')
+seq(as.Date("2026-01-01"), as.Date("2026-12-31"), 'month')
+d = seq(as.Date("2026-01-01"), as.Date("2126-12-31"), 'years')
 
+d[45]
+d[35:45]
+d[c(35,45)]
 
+# 변수
+v1 = 'aaa'
+v1
 
+v1 = 1:10
+v1
 
+v1 = 'a', 'b', 'c'   
 
+v1 = c('a', 'b', 'c')    # 여러개의 값을 넣으려면 c 함수(벡터) 쓰기
+v1
+v1[1]
+v1[2]
+v1[3]
 
+v1 = c(1,2,3,4,5)
+v1
+class(v1)
 
+v2 = c('a','b','c')
+v2
+class(v2)
 
+v3 = c(1,2,3,4,'5')    # 숫자와 문자가 혼용되면 모두 문자로 변환된다
+v3
+class(v3)
 
+# 변수 설정 시 유의 사항
+# 1. 대소문자 구분
+# 2. 영어, 숫자 모두 사용 가능하지만 시작은 반드시 문자
+변수=1
+변수
 
+# 3. 예약어는 사용 못한다
+# if, else, ifelse, for, while, break, TRUE, NA, in, seq ....
 
+n1 = '1'
+n2 = 2
+n1 + n2
 
-
-
-
-
-
-
-
-
+as.numeric(n1) + n2
