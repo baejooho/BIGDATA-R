@@ -1,5 +1,12 @@
 setwd("C:/r_data")
 Sys.setlocale('LC_ALL', 'Korean')
+Sys.setlocale('LC_ALL', 'Korean_Korea.UTF-8')
+
+library(lubridate)
+library(dplyr)
+library(plyr)
+library(ggplot2)
+library(googleVis)
 
 # 조건문, 반복문
 # 비교연산자 : ==, !=, >=, <=, >, <
@@ -152,3 +159,59 @@ my4=function(a,b) {
 my4(2,3)
 my4(0,2)
 my4(-1,3)
+
+# 특정 패턴만 골라내기
+# grep(패턴, 벡터) : 벡터에서 특정패턴을 찾아 그 위치 출력
+
+c1 = c('apple', 'Apple', 'APPLE', 'banana', 'grape')
+grep('apple', c1)
+
+c2 = c('apple', 'banana')
+grep(c2, c1)
+
+grep(paste(c2, collapse = '|'), c1) # collapse = '|'  :두 가지 패턴을 동시에 찾기
+grep(paste(c2, collapse = '|'), c1, value = T)
+
+grep('pp', c1)
+grep('pp', c1, value = T)
+
+grep('^A', c1, value = T)
+grep('e$', c1, value = T)
+
+c2 = ('grape1', 'apple1', 'apple', 'orange', 'Apple')
+grep('[1-9]', c2, value = T)
+grep('[[:upper:]]', c2, value = T)
+
+# nchar() : 입력된 배열이나 문자열의 길이
+c1
+nchar(c1)
+
+install.packages("stringr")
+library(stringr)
+
+str_length(c1)
+
+nchar('홍길동')
+nchar('a b')
+
+# paste('a','b','c') : a,b와 c를 합쳐서 하나의 문자열처럼 출력
+paste('홍', '길', '동')
+str_c("홍", "길", "동")
+
+paste('홍', '길', '동', sep='')
+paste('홍', '길', '동', sep='-')
+paste('I', '\'m',' a boy', sep='')
+
+
+#substr('a', 시작위치, 긑나는위치) : 특정부분만 골라내기
+substr('abc123', 3,3)
+str_sub('abc123', 3,3)
+
+substr('abc123', 3,5)
+
+# strsplit('문자열', split='기준문자') : 특정글자를 기준으로 분리
+strsplit('2026/04/17', split = '/')
+
+# regexpr(패턴, 문자열) : 특정패턴을 찾기
+grep('-', '010-1111-2222')
+regexpr('-', '010-1111-2222')
