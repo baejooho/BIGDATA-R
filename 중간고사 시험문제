@@ -12,7 +12,7 @@ l1 = list(name="홍길동", "이순신", "유관순",
           pay=500)
 
 정답)
-l1$name[length(l1$name-1]=NA
+l1$name[length(l1$name)-1]=NA
 l1$name
 
 - subset함수
@@ -22,5 +22,5 @@ rh <- c('+','+','-','+','+')
 age <- c(21,30,43,17,26)
 
 정답
-df = data.grame(blood,rh,age)
+df = data.frame(blood,rh,age)
 df.nb = subset(df, blood != 'B')
